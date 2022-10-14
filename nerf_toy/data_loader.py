@@ -25,7 +25,7 @@ class DataLoader(object):
             return yx_grid, target
 
     @staticmethod
-    def _create_xy_grid(grid_size: Tuple) -> np.ndarray:
+    def _create_yx_grid(grid_size: Tuple) -> np.ndarray:
         """
         Creates mesh grid of normalised pixel coordinates based on matrix indexing convention
         """
