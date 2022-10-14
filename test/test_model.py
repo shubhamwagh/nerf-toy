@@ -1,5 +1,4 @@
 import unittest
-import tensorflow as tf
 
 from nerf_toy.model import base_model
 
