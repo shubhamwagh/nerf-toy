@@ -1,10 +1,13 @@
 import unittest
+import pathlib
 import numpy as np
 from nerf_toy.utils import read_img, normalise, arr_to_image
 
+current_path = pathlib.Path(__file__).parent.resolve()
+
 
 class TestUtils(unittest.TestCase):
-    IMG_PATH = '../data/lion_face.jpg'
+    IMG_PATH = current_path.parent.joinpath('data', 'lion_face.jpg').as_posix()
 
     def test_read_img(self):
         rgb_img = read_img(self.IMG_PATH, rgb=True)

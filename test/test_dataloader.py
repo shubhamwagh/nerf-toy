@@ -1,11 +1,14 @@
 import unittest
+import pathlib
 import numpy as np
 from nerf_toy.data_loader import DataLoader
 from nerf_toy.transforms import BasicEncodingTransform, PositionalEncodingTransform, GaussianFourierFeatureTransform
 
+current_path = pathlib.Path(__file__).parent.resolve()
+
 
 class TestDataLoader(unittest.TestCase):
-    IMG_PATH = '../data/lion_face.jpg'
+    IMG_PATH = current_path.parent.joinpath('data', 'lion_face.jpg').as_posix()
 
     def test_data_loader_without_transform(self):
         loader = DataLoader(img_path=self.IMG_PATH)
