@@ -1,5 +1,5 @@
 import numpy as np
-from nerf_toy.utils import read_img, pre_process
+from nerf_toy.utils import read_img, normalise
 
 from typing import Tuple, Callable, Optional
 
@@ -13,9 +13,9 @@ class DataLoader(object):
         """
         Loads normalised pixel coordinates grid and normalised target
         """
-        target = np.expand_dims(pre_process(self.img), 0)
+        target = np.expand_dims(normalise(self.img), 0)
         batch, height, width, channels = target.shape
-        yx_grid = self._create_xy_grid(grid_size=(height, width))
+        yx_grid = self._create_yx_grid(grid_size=(height, width))
 
         assert len(yx_grid.shape) == len(target.shape)
 
@@ -34,3 +34,4 @@ class DataLoader(object):
         coords_j = np.linspace(0, 1, w, endpoint=False)
         grid = np.stack(np.meshgrid(coords_i, coords_j, indexing='ij'), axis=-1).astype('float32')
         return grid
+
