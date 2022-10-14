@@ -14,7 +14,7 @@ class BasicEncodingTransform(object):
     def __call__(self, x: np.ndarray) -> np.ndarray:
         assert len(x.shape) == 4, 'Expected 4D input (got {}D input)'.format(len(x.shape))
         x_proj = 2 * np.pi * x
-        return np.concatenate((np.sin(x_proj), np.cos(x_proj)), axis=-1)
+        return np.concatenate((np.sin(x_proj), np.cos(x_proj)), axis=-1).astype('float32')
 
 
 class PositionalEncodingTransform(object):
@@ -40,7 +40,7 @@ class PositionalEncodingTransform(object):
             x_proj = np.pi * freq * x
             pos_enc[:, :, :, channel_id: channel_id + 4] = np.concatenate((np.sin(x_proj), np.cos(x_proj)), axis=-1)
             channel_id += 4
-        return pos_enc
+        return pos_enc.astype('float32')
 
 
 class GaussianFourierFeatureTransform(object):
@@ -79,4 +79,4 @@ class GaussianFourierFeatureTransform(object):
         x = x.reshape(batches, height, width, self._mapping_size)
 
         x = 2 * np.pi * x
-        return np.concatenate((np.sin(x), np.cos(x)), axis=-1)
+        return np.concatenate((np.sin(x), np.cos(x)), axis=-1).astype('float32')
