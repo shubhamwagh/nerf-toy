@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 from nerf_toy.utils import arr_to_image
 from IPython.display import clear_output
 
-
 from typing import List
 
 
