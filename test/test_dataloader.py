@@ -11,7 +11,7 @@ class TestDataLoader(unittest.TestCase):
     IMG_PATH = current_path.parent.joinpath('data', 'lion_face.jpg').as_posix()
 
     def test_data_loader_without_transform(self):
-        loader = DataLoader(img_path=self.IMG_PATH)
+        loader = DataLoader(uri=self.IMG_PATH)
         yx_grid, target = loader.load_data()
 
         # image shape
@@ -52,7 +52,7 @@ class TestDataLoader(unittest.TestCase):
 
     def test_data_loader_with_basic_transform(self):
         transform = BasicEncodingTransform()
-        loader = DataLoader(img_path=self.IMG_PATH, transform=transform)
+        loader = DataLoader(uri=self.IMG_PATH, transform=transform)
         yx_grid, target = loader.load_data()
 
         # image shape
@@ -94,7 +94,7 @@ class TestDataLoader(unittest.TestCase):
     def test_data_loader_with_positional_encoding_transform(self):
         L = 10
         transform = PositionalEncodingTransform(multires=L)
-        loader = DataLoader(img_path=self.IMG_PATH, transform=transform)
+        loader = DataLoader(uri=self.IMG_PATH, transform=transform)
         yx_grid, target = loader.load_data()
 
         # image shape
@@ -137,7 +137,7 @@ class TestDataLoader(unittest.TestCase):
         mapping_size = 50
         scale = 10
         transform = GaussianFourierFeatureTransform(num_input_channels=2, mapping_size=mapping_size, scale=scale)
-        loader = DataLoader(img_path=self.IMG_PATH, transform=transform)
+        loader = DataLoader(uri=self.IMG_PATH, transform=transform)
         yx_grid, target = loader.load_data()
 
         # image shape

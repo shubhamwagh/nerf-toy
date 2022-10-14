@@ -1,16 +1,16 @@
-import cv2
+import imageio
 import numpy as np
 
 
-def read_img(img_path: str, rgb: bool = True) -> np.ndarray:
+def read_img(uri: str, rgb: bool = True) -> np.ndarray:
     """
     Reads file path to output uint8 image
     """
-    img = cv2.imread(img_path)
+    img = imageio.imread(uri)
     if rgb:
-        return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    else:
         return img
+    else:
+        return img[:, :, ::-1]
 
 
 def arr_to_image(img_arr: np.ndarray) -> np.ndarray:

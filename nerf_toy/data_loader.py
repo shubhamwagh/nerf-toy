@@ -5,8 +5,15 @@ from typing import Tuple, Callable, Optional
 
 
 class DataLoader(object):
-    def __init__(self, img_path: str, transform: Optional[Callable] = None):
-        self.img = read_img(img_path)
+    def __init__(self, uri, transform: Optional[Callable] = None):
+        """
+        DataLoader
+        :param uri: {str, pathlib.Path, bytes, file}
+                    The resource to load the image from, e.g. a filename, pathlib.Path,
+                    http address or file object.
+        :param transform: encoding transform
+        """
+        self.img = read_img(uri)
         self.transform = transform
 
     def load_data(self) -> Tuple[np.ndarray, np.ndarray]:
