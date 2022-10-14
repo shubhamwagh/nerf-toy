@@ -23,12 +23,3 @@ def normalise(img: np.ndarray) -> np.ndarray:
     img_arr = img.astype('float32')
     img_arr = img_arr / 255.0
     return img_arr
-
-
-def psnr(y_true, y_pred):
-    return tf.image.psnr(y_true, y_pred, 1.0, name='PSNR')
-
-
-def ssim(y_true, y_pred):
-    return tf.image.ssim(y_true, y_pred, max_val=1.0, filter_size=11,
-                         filter_sigma=1.5, k1=0.01, k2=0.03)
