@@ -15,7 +15,7 @@ class DataLoader(object):
         """
         target = np.expand_dims(normalise(self.img), axis=0)
         batch, height, width, channels = target.shape
-        
+
         yx_grid = self._create_yx_grid(grid_size=(height, width))
         yx_grid = np.expand_dims(yx_grid, axis=0)
         assert len(yx_grid.shape) == len(target.shape)
@@ -35,4 +35,3 @@ class DataLoader(object):
         coords_j = np.linspace(0, 1, w, endpoint=False)
         grid = np.stack(np.meshgrid(coords_i, coords_j, indexing='ij'), axis=-1).astype('float32')
         return grid
-

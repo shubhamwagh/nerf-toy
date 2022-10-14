@@ -6,7 +6,7 @@ from typing import Tuple
 
 def base_model(input_shape: Tuple[int, int, int], output_dim: int = 3, num_layers: int = 4, num_channels: int = 256):
     """
-    Simple 4-layer MLP (3-hidden layers + 1 output layer) using conv layers of kernel size = 1
+    Simple 4-layer MLP (3-hidden layers + 1 output layer) using conv layers
     """
     channel_axis = 1 if K.image_data_format() == "channels_first" else -1
     if K.image_data_format() == "channels_first":
