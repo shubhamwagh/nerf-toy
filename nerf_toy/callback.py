@@ -4,6 +4,8 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from nerf_toy.utils import arr_to_image
+from IPython.display import clear_output
+
 
 from typing import List
 
@@ -51,9 +53,11 @@ class PlotLossesAndMetricsCallback(tf.keras.callbacks.Callback):
         self.psnrs.append(logs.get('psnr'))
         self.ssims.append(logs.get('ssim'))
 
-    def on_train_end(self, logs=None):
-        print('Plotting training metrics and losses...')
-        fig, ax = plt.subplots(3, 1, figsize=(30, 50))
+        fig, ax = plt.subplots(1, 3, sharex=True)
+
+        clear_output(wait=True)
+
+        ax[0].set_yscale('log')
         ax[0].set_title('Train loss')
         ax[0].plot(self.epochs, self.losses, label='train loss')
         ax[0].set_ylabel('loss')
