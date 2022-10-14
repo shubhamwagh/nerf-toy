@@ -53,7 +53,7 @@ class PlotLossesAndMetricsCallback(tf.keras.callbacks.Callback):
 
     def on_train_end(self, logs=None):
         print('Plotting training metrics and losses...')
-        fig, ax = plt.subplots(1, 3, figsize=(30, 50))
+        fig, ax = plt.subplots(1, 3)
         ax[0].set_title('Train loss')
         ax[0].plot(self.epochs, self.losses, label='train loss')
         ax[0].set_ylabel('loss')
