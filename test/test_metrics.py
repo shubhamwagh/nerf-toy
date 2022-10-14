@@ -8,7 +8,7 @@ current_path = pathlib.Path(__file__).parent.resolve()
 
 class TestMetrics(unittest.TestCase):
     IMG_PATH_1 = current_path.parent.joinpath('data', 'lion_face.jpg').as_posix()
-    IMG_PATH_2 = current_path.parent.joinpath('data', 'lion_face_noise.jpg').as_posix()
+    IMG_PATH_2 = current_path.parent.joinpath('data', 'noisy_lion_face.jpg').as_posix()
 
     def _read_image_tf(self, img_path):
         with open(img_path, 'rb') as file:
