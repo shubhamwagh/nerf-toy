@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import tensorflow as tf
 
 
 def read_img(img_path: str, rgb: bool = True) -> np.ndarray:
