@@ -23,7 +23,7 @@ class NerfToyPredictionSaverCallback(tf.keras.callbacks.Callback):
             self.prediction_imgs.append(arr_to_image(pred.numpy()[0]))
 
     def on_train_end(self, logs=None):
-        print('Saving training convergence video')
+        print('Saving training convergence video.....')
         data8 = np.stack(self.prediction_imgs)
 
         count = 0
@@ -32,3 +32,4 @@ class NerfToyPredictionSaverCallback(tf.keras.callbacks.Callback):
 
         file_path = os.path.join(self.video_path, f'training_convergence_{count}.mp4')
         imageio.mimwrite(file_path, data8, fps=20)
+        print(f'Saved training convergence video as {file_path}')
