@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from nerf_toy.utils import read_img, normalise, to_image
+from nerf_toy.utils import read_img, normalise, arr_to_image
 
 
 class TestUtils(unittest.TestCase):
@@ -29,7 +29,7 @@ class TestUtils(unittest.TestCase):
 
     def test_to_image(self):
         norm_arr = normalise(read_img(self.IMG_PATH))
-        converted_img = to_image(norm_arr)
+        converted_img = arr_to_image(norm_arr)
         self.assertTrue(converted_img.dtype == 'uint8')
         self.assertEqual(converted_img.min(), 0)
         self.assertEqual(converted_img.max(), 255)

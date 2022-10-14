@@ -15,13 +15,13 @@ class TestTransforms(unittest.TestCase):
         self.assertEqual(x_enc.shape, input_shape[:-1] + (expected_out_channels,))
         self.assertTrue(isinstance(x_enc, np.ndarray))
         self.assertEqual(x_enc.dtype, 'float32')
-        self.assertAlmostEqual(x_enc.min(), -1, 3)
-        self.assertAlmostEqual(x_enc.max(), 1, 3)
+        self.assertAlmostEqual(x_enc.min(initial=0), -1, 3)
+        self.assertAlmostEqual(x_enc.max(initial=0), 1, 3)
 
         # shape must be 4D input
         with self.assertRaises(AssertionError):
-            incorect_input_shape = (100, 100, 2)
-            incorrect_x = np.random.randn(*incorect_input_shape)
+            incorrect_input_shape = (100, 100, 2)
+            incorrect_x = np.random.randn(*incorrect_input_shape)
             encoding(incorrect_x)
 
     def test_positional_encoding_transform(self):
@@ -37,13 +37,13 @@ class TestTransforms(unittest.TestCase):
         self.assertEqual(x_enc.shape, input_shape[:-1] + (expected_out_channels,))
         self.assertTrue(isinstance(x_enc, np.ndarray))
         self.assertEqual(x_enc.dtype, 'float32')
-        self.assertAlmostEqual(x_enc.min(), -1, 3)
-        self.assertAlmostEqual(x_enc.max(), 1, 3)
+        self.assertAlmostEqual(x_enc.min(initial=0), -1, 3)
+        self.assertAlmostEqual(x_enc.max(initial=0), 1, 3)
 
         # shape must be 4D input
         with self.assertRaises(AssertionError):
-            incorect_input_shape = (100, 100, 2)
-            incorrect_x = np.random.randn(*incorect_input_shape)
+            incorrect_input_shape = (100, 100, 2)
+            incorrect_x = np.random.randn(*incorrect_input_shape)
             encoding(incorrect_x)
 
     def test_gaussian_fourier_feature_transform(self):
@@ -62,8 +62,8 @@ class TestTransforms(unittest.TestCase):
         self.assertEqual(x_enc.shape, input_shape[:-1] + (expected_out_channels,))
         self.assertTrue(isinstance(x_enc, np.ndarray))
         self.assertEqual(x_enc.dtype, 'float32')
-        self.assertAlmostEqual(x_enc.min(), -1, 3)
-        self.assertAlmostEqual(x_enc.max(), 1, 3)
+        self.assertAlmostEqual(x_enc.min(initial=0), -1, 3)
+        self.assertAlmostEqual(x_enc.max(initial=0), 1, 3)
 
         # shape must be 4D input
         with self.assertRaises(AssertionError):

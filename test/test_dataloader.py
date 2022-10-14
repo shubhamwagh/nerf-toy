@@ -40,12 +40,12 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(target.dtype, 'float32')
 
         # range values of input and target
-        self.assertAlmostEqual(yx_grid.min(), 0, 2)
-        self.assertAlmostEqual(yx_grid.max(), 1, 2)
+        self.assertAlmostEqual(yx_grid.min(initial=0), 0, 2)
+        self.assertAlmostEqual(yx_grid.max(initial=0), 1, 2)
 
         # range values of target
-        self.assertEqual(target.min(), 0)
-        self.assertEqual(target.max(), 1)
+        self.assertEqual(target.min(initial=0), 0)
+        self.assertEqual(target.max(initial=0), 1)
 
     def test_data_loader_with_basic_transform(self):
         transform = BasicEncodingTransform()
@@ -81,12 +81,12 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(target.dtype, 'float32')
 
         # range values of input after encoding will be in [-1, 1]
-        self.assertAlmostEqual(yx_grid.min(), -1, 2)
-        self.assertAlmostEqual(yx_grid.max(), 1, 2)
+        self.assertAlmostEqual(yx_grid.min(initial=0), -1, 2)
+        self.assertAlmostEqual(yx_grid.max(initial=0), 1, 2)
 
         # range values of target
-        self.assertEqual(target.min(), 0)
-        self.assertEqual(target.max(), 1)
+        self.assertEqual(target.min(initial=0), 0)
+        self.assertEqual(target.max(initial=0), 1)
 
     def test_data_loader_with_positional_encoding_transform(self):
         L = 10
@@ -123,12 +123,12 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(target.dtype, 'float32')
 
         # range values of input after encoding will be in [-1, 1]
-        self.assertAlmostEqual(yx_grid.min(), -1, 2)
-        self.assertAlmostEqual(yx_grid.max(), 1, 2)
+        self.assertAlmostEqual(yx_grid.min(initial=0), -1, 2)
+        self.assertAlmostEqual(yx_grid.max(initial=0), 1, 2)
 
         # range values of target
-        self.assertEqual(target.min(), 0)
-        self.assertEqual(target.max(), 1)
+        self.assertEqual(target.min(initial=0), 0)
+        self.assertEqual(target.max(initial=0), 1)
 
     def test_data_loader_with_gaussian_fourier_feature_transform(self):
         mapping_size = 50
@@ -166,12 +166,12 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(target.dtype, 'float32')
 
         # range values of input after encoding will be in [-1, 1]
-        self.assertAlmostEqual(yx_grid.min(), -1, 2)
-        self.assertAlmostEqual(yx_grid.max(), 1, 2)
+        self.assertAlmostEqual(yx_grid.min(initial=0), -1, 2)
+        self.assertAlmostEqual(yx_grid.max(initial=0), 1, 2)
 
         # range values of target
-        self.assertEqual(target.min(), 0)
-        self.assertEqual(target.max(), 1)
+        self.assertEqual(target.min(initial=0), 0)
+        self.assertEqual(target.max(initial=0), 1)
 
 
 if __name__ == "__main__":
