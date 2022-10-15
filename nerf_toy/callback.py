@@ -56,20 +56,22 @@ class PlotLossesAndMetricsCallback(tf.keras.callbacks.Callback):
 
         clear_output(wait=True)
 
-        ax[0].set_yscale('log')
         ax[0].set_title('Train loss')
         ax[0].plot(self.epochs, self.losses, label='train loss')
         ax[0].set_ylabel('loss')
         ax[0].set_xlabel('epochs')
+        ax[0].grid(visible=True)
 
         ax[1].set_title('PSNR')
         ax[1].plot(self.epochs, self.psnrs, label='psnr')
         ax[1].set_ylabel('PSNR')
         ax[1].set_xlabel('epochs')
+        ax[1].grid(visible=True)
 
         ax[2].set_title('SSIM')
         ax[2].plot(self.epochs, self.ssims, label='ssim')
         ax[2].set_ylabel('ssim')
         ax[2].set_xlabel('epochs')
+        ax[2].grid(visible=True)
 
         plt.show()
