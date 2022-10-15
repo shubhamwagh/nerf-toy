@@ -54,19 +54,22 @@ The model is trained with the following input mappings $\gamma (\mathbf{v})$ for
 
 ## Features
 - Transforms: **Basic**, **Positional Encoding** and **Gaussian Fourier Feature**
-- Data Loader for any input image, where filepath, image url or bytes can be passed as input
-- Basic NeRF toy model, which can be customised based on number of layer and output channels
+- Data loader for any input image, where filepath, image url or bytes can be passed as input
+- [Keras](https://keras.io) based NeRF toy model, which can be customised based on number of layer and output channels
 - Metrics: [PSNR](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio)
   , [SSIM](https://en.wikipedia.org/wiki/Structural_similarity)
 - Custom training callback: **PredictionVideoSaverCallback**, **PlotLossesAndMetricsCallback**
-- Optimizers: SGD, Adam
+- Utility functions to read and manipulate image
+
+## Examples
+
 
 ## References
 
-1. NeRF - https://arxiv.org/abs/2003.08934
-2. Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
-   - https://arxiv.org/abs/2006.10739
-3. Neural Tangent Kernel: Convergence and Generalization in Neural Networks - https://arxiv.org/abs/1806.07572
+1. [NeRF Paper](https://arxiv.org/abs/2003.08934)
+2. [Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains](https://arxiv.org/abs/2006.10739)
+3. [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://arxiv.org/abs/1806.07572)
+4. [NeRF Video](https://www.youtube.com/watch?v=nRyOzHpcr4Q&t=1706s)
 
 ## License
 
