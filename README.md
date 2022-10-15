@@ -33,14 +33,16 @@ NeRF tackles i.e. memorising a 3D scene given multiple view points.
 The task is to produce the _(r, g, b)_ value of an image as a
 function of _(x,y)_ image coordinates. Our model is a coordinate-based multilayer perceptron.
 
-<img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png" class="center">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png">
+</p>
 
 This is implemented using 2D convolutions with a kernel size of (1, 1), which act as "**pointwise**" convolutions. This
 is equivalent to a densely connected multilayer perceptron for each coordinate.
 Also, we use batchnorm to speed up convergence.
 
 [//]: # (Script to add LaTeX maths equation)
-<script
+<script>
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript">
 </script>
