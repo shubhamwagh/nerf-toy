@@ -18,7 +18,7 @@
 
 <div align="center">
 
-|                                                Original                                                |                                                Raw Mapping                                                 | Basic Mapping                                                                                                |                                          Fourier Feature Mapping                                           |
+|                                                Original                                                |                                                 No Mapping                                                 | Basic Mapping                                                                                                |                                          Fourier Feature Mapping                                           |
 |:------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------:|
 | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/lion_face.jpg" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/raw_lion_face.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/basic_lion_face.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/rff_lion_face.gif" width="175"> |
 
@@ -34,7 +34,7 @@ The task is to produce the _(r, g, b)_ value of an image as a
 function of _(x,y)_ image coordinates. Our model is a coordinate-based multilayer perceptron.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png" height="175">
+    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png" height="200">
 </p>
 
 This is implemented using 2D convolutions with a kernel size of (1, 1), which act as "**pointwise**" convolutions. This
@@ -49,8 +49,7 @@ The model is trained with the following input mappings $\gamma (\mathbf{v})$ for
 
 <!-- - Positional encoding: $\gamma(\mathbf{v})=\left[ \ldots, \cos(2 \pi \sigma^{j/m} \mathbf{v}),\sin(2 \pi \sigma^{j/m} \mathbf{v}), \ldots \right]^\mathrm{T}$ for $j = 0, \ldots, m-1$.  -->
 
-- Gaussian Fourier feature mapping: $\gamma(\mathbf{v})=
-  \left[ \cos(2 \pi \mathbf B \mathbf{v}), \sin(2 \pi \mathbf B \mathbf{v}) \right]^\mathrm{T}$,
+- Gaussian Fourier feature mapping: $\gamma(\mathbf{v})=\left[ \cos(2 \pi \mathbf B \mathbf{v}), \sin(2 \pi \mathbf B \mathbf{v}) \right]^\mathrm{T}$,
   where each entry in $\mathbf B \in \mathbb R^{m \times d}$ is sampled from $\mathcal N(0,\sigma^2)$
 
 ## Features
