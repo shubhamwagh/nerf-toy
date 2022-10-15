@@ -15,7 +15,7 @@ class TestDataLoader(unittest.TestCase):
         yx_grid, target = loader.load_data()
 
         # image shape
-        self.assertEqual(loader.img.shape, (640, 640, 3))
+        self.assertEqual(loader.img.shape, (256, 256, 3))
 
         # no transform
         self.assertIsNone(loader.transform)
@@ -25,8 +25,8 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(len(target.shape), 4)
 
         # yx_grid and target have same height, width
-        self.assertEqual(yx_grid.shape[1:-1], (640, 640))
-        self.assertEqual(target.shape[1:-1], (640, 640))
+        self.assertEqual(yx_grid.shape[1:-1], (256, 256))
+        self.assertEqual(target.shape[1:-1], (256, 256))
 
         # yx_grid num_channel is 2 w/o encoding
         self.assertEqual(yx_grid.shape[-1], 2)
@@ -56,7 +56,7 @@ class TestDataLoader(unittest.TestCase):
         yx_grid, target = loader.load_data()
 
         # image shape
-        self.assertEqual(loader.img.shape, (640, 640, 3))
+        self.assertEqual(loader.img.shape, (256, 256, 3))
 
         # transform available
         self.assertIsNotNone(loader.transform)
@@ -66,8 +66,8 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(len(target.shape), 4)
 
         # yx_grid and target have same height, width
-        self.assertEqual(yx_grid.shape[1:-1], (640, 640))
-        self.assertEqual(target.shape[1:-1], (640, 640))
+        self.assertEqual(yx_grid.shape[1:-1], (256, 256))
+        self.assertEqual(target.shape[1:-1], (256, 256))
 
         # yx_grid num_channel is 2 * 2, sin, cos components for two channels
         self.assertEqual(yx_grid.shape[-1], 4)
@@ -98,7 +98,7 @@ class TestDataLoader(unittest.TestCase):
         yx_grid, target = loader.load_data()
 
         # image shape
-        self.assertEqual(loader.img.shape, (640, 640, 3))
+        self.assertEqual(loader.img.shape, (256, 256, 3))
 
         # transform available
         self.assertIsNotNone(loader.transform)
@@ -108,8 +108,8 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(len(target.shape), 4)
 
         # yx_grid and target have same height, width
-        self.assertEqual(yx_grid.shape[1:-1], (640, 640))
-        self.assertEqual(target.shape[1:-1], (640, 640))
+        self.assertEqual(yx_grid.shape[1:-1], (256, 256))
+        self.assertEqual(target.shape[1:-1], (256, 256))
 
         # yx_grid num_channel is L * 2 * 2, sin, cos components for two channels for all 10 frequencies
         self.assertEqual(yx_grid.shape[-1], 40)
@@ -141,7 +141,7 @@ class TestDataLoader(unittest.TestCase):
         yx_grid, target = loader.load_data()
 
         # image shape
-        self.assertEqual(loader.img.shape, (640, 640, 3))
+        self.assertEqual(loader.img.shape, (256, 256, 3))
 
         # transform available
         self.assertIsNotNone(loader.transform)
@@ -151,8 +151,8 @@ class TestDataLoader(unittest.TestCase):
         self.assertEqual(len(target.shape), 4)
 
         # yx_grid and target have same height, width
-        self.assertEqual(yx_grid.shape[1:-1], (640, 640))
-        self.assertEqual(target.shape[1:-1], (640, 640))
+        self.assertEqual(yx_grid.shape[1:-1], (256, 256))
+        self.assertEqual(target.shape[1:-1], (256, 256))
 
         # yx_grid num_channel is mapping_size * 2 channels
         self.assertEqual(yx_grid.shape[-1], mapping_size * 2)

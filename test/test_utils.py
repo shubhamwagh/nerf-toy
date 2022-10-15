@@ -11,10 +11,10 @@ class TestUtils(unittest.TestCase):
 
     def test_read_img(self):
         rgb_img = read_img(self.IMG_PATH, rgb=True)
-        self.assertEqual(rgb_img.shape, (640, 640, 3))
+        self.assertEqual(rgb_img.shape, (256, 256, 3))
 
         bgr_img = read_img(self.IMG_PATH, rgb=False)
-        self.assertEqual(bgr_img.shape, (640, 640, 3))
+        self.assertEqual(bgr_img.shape, (256, 256, 3))
 
         np.testing.assert_array_equal(rgb_img[:, :, 0], bgr_img[:, :, -1])
         np.testing.assert_array_equal(rgb_img[:, :, -1], bgr_img[:, :, 0])
