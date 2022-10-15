@@ -42,9 +42,7 @@ is equivalent to a densely connected multilayer perceptron for each coordinate.
 Also, we use batchnorm to speed up convergence.
 
 [//]: # (Script to add LaTeX maths equation)
-<script>
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
 </script>
 
 We train the model with the following input mappings $\gamma (\mathbf{v})$ :
