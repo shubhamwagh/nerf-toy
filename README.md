@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  nerf_toy
+  nerf-toy
   <br>
 </h1>
 
@@ -62,6 +62,13 @@ The model is trained with the following input mappings $\gamma (\mathbf{v})$ for
 - Utility functions to read and manipulate image
 
 ## Examples
+The [demo notebook](https://colab.research.google.com/github/shubhamwagh/nerf-toy/blob/main/notebook/demo.ipynb) demonstrates the core idea  with full model training from scratch.
+
+It can be observed that directly regressing the _(x, y)_ image coordinates results in blurry reconstructions.
+
+Instead, lifting the input pixel coordinates _(x, y)_ to higher dimensions via transformations (e.g. gaussian fourier feature) 
+makes it easier for network to learn high frequency functions in low dimensional domains. 
+Training with transformed _(x, y)_ coordinates shows dramatic improvements in the results and can preserve the sharp edges in the image. 
 
 
 ## References
