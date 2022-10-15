@@ -34,7 +34,7 @@ The task is to produce the _(r, g, b)_ value of an image as a
 function of _(x,y)_ image coordinates. Our model is a coordinate-based multilayer perceptron.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png" height="200">
+    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/network_diagram.png" height="200">
 </p>
 
 This is implemented using 2D convolutions with a kernel size of (1, 1), which act as "**pointwise**" convolutions. This
