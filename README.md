@@ -34,29 +34,39 @@ The task is to produce the _(r, g, b)_ value of an image as a
 function of _(x,y)_ image coordinates. Our model is a coordinate-based multilayer perceptron.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png">
+    <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/network_diagram.png" height="175">
 </p>
 
 This is implemented using 2D convolutions with a kernel size of (1, 1), which act as "**pointwise**" convolutions. This
 is equivalent to a densely connected multilayer perceptron for each coordinate.
 Also, we use batchnorm to speed up convergence.
 
+The model is trained with the following input mappings $\gamma (\mathbf{v})$ for comparison :
 
-We train the model with the following input mappings $\gamma (\mathbf{v})$ :
+- No mapping: $\gamma(\mathbf{v})= \mathbf{v}$.
 
-- No mapping: $\gamma(\mathbf{v})= \mathbf{v}$. 
-
-- Basic mapping: $\gamma(\mathbf{v})=\left[ \cos(2 \pi \mathbf{v}),\sin(2 \pi \mathbf{v}) \right]^\mathrm{T}$. 
+- Basic mapping: $\gamma(\mathbf{v})=\left[ \cos(2 \pi \mathbf{v}),\sin(2 \pi \mathbf{v}) \right]^\mathrm{T}$.
 
 <!-- - Positional encoding: $\gamma(\mathbf{v})=\left[ \ldots, \cos(2 \pi \sigma^{j/m} \mathbf{v}),\sin(2 \pi \sigma^{j/m} \mathbf{v}), \ldots \right]^\mathrm{T}$ for $j = 0, \ldots, m-1$.  -->
 
-- Gaussian Fourier feature mapping: $\gamma(\mathbf{v})= \left[ \cos(2 \pi \mathbf B \mathbf{v}), \sin(2 \pi \mathbf B \mathbf{v}) \right]^\mathrm{T}$, 
-where each entry in $\mathbf B \in \mathbb R^{m \times d}$ is sampled from $\mathcal N(0,\sigma^2)$
+- Gaussian Fourier feature mapping: $\gamma(\mathbf{v})=
+  \left[ \cos(2 \pi \mathbf B \mathbf{v}), \sin(2 \pi \mathbf B \mathbf{v}) \right]^\mathrm{T}$,
+  where each entry in $\mathbf B \in \mathbb R^{m \times d}$ is sampled from $\mathcal N(0,\sigma^2)$
 
-## Refrences
+## Features
+- Transforms: **Basic**, **Positional Encoding** and **Gaussian Fourier Feature**
+- Data Loader for any input image, where filepath, image url or bytes can be passed as input
+- Basic NeRF toy model, which can be customised based on number of layer and output channels
+- Metrics: [PSNR](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio)
+  , [SSIM](https://en.wikipedia.org/wiki/Structural_similarity)
+- Custom training callback: **PredictionVideoSaverCallback**, **PlotLossesAndMetricsCallback**
+- Optimizers: SGD, Adam
+
+## References
 
 1. NeRF - https://arxiv.org/abs/2003.08934
-2. Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains - https://arxiv.org/abs/2006.10739
+2. Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
+   - https://arxiv.org/abs/2006.10739
 3. Neural Tangent Kernel: Convergence and Generalization in Neural Networks - https://arxiv.org/abs/1806.07572
 
 ## License
