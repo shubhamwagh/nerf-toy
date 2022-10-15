@@ -7,8 +7,7 @@
 <h4 align="center">A 2D toy illustration of Neural Radiance Fields</h4>
 
 
-
-<table style="border:1">
+<table style="margin: 0px auto;">
   <tr>
      <td><b>Original</b></td>
      <td><b>Raw Pixel</b></td>
