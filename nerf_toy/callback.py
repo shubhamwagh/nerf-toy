@@ -52,7 +52,7 @@ class PlotLossesAndMetricsCallback(tf.keras.callbacks.Callback):
         self.psnrs.append(logs.get('psnr'))
         self.ssims.append(logs.get('ssim'))
 
-        fig, ax = plt.subplots(1, 3, sharex=True)
+        fig, ax = plt.subplots(1, 3, figsize=(18, 4), sharex=True)
 
         clear_output(wait=True)
 
