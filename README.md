@@ -7,19 +7,11 @@
 <h4 align="center">A 2D toy illustration of Neural Radiance Fields</h4>
 
 
-<table style="margin: 0px auto;">
-  <tr>
-     <td><b>Original</b></td>
-     <td><b>Raw Pixel</b></td>
-     <td><b>Basic Encoding</b></td>
-     <td><b>Fourier Feature</b></td>
 
-  </tr>
-  <tr>
-    <td valign="top"><img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/lion_face.jpg" width="120"></td>
-    <td valign="top"><img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/raw_lion_face.gif" width="120"></td>
-    <td valign="top"><img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/basic_lion_face.gif" width="120"></td>
-    <td valign="top"><img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/rff_lion_face.gif" width="120"></td>
+<div align="center">
+    
+|                                                Original                                                |                                                    Raw                                                     | Basic Encoding                                                                                               |                                              Fourier Feature                                               |
+|:------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------:|
+| <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/lion_face.jpg" width="300"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/raw_lion_face.gif" width="300"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/basic_lion_face.gif" width="300"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/rff_lion_face.gif" width="300"> |
 
-  </tr>
- </table>
+</div>
