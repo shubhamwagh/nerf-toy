@@ -18,7 +18,7 @@
 
 <div align="center">
 
-|                                                Original                                                |                                                    Raw                                                     | Basic Encoding                                                                                               |                                              Fourier Feature                                               |
+|                                                Original                                                |                                                Raw Mapping                                                 | Basic Mapping                                                                                                |                                          Fourier Feature Mapping                                           |
 |:------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------:|
 | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/lion_face.jpg" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/raw_lion_face.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/basic_lion_face.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/rff_lion_face.gif" width="175"> |
 
@@ -58,3 +58,7 @@ where each entry in $\mathbf B \in \mathbb R^{m \times d}$ is sampled from $\mat
 1. NeRF - https://arxiv.org/abs/2003.08934
 2. Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains - https://arxiv.org/abs/2006.10739
 3. Neural Tangent Kernel: Convergence and Generalization in Neural Networks - https://arxiv.org/abs/1806.07572
+
+## License
+
+MIT
