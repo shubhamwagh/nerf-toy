@@ -97,3 +97,9 @@ Training with transformed _(x, y)_ coordinates shows dramatic improvements in th
 ## License
 
 MIT
+
+---
+
+### Image Credits
+- [Unsplash](https://unsplash.com)
+- [POV-Ray Hall of Fame](https://hof.povray.org/)
