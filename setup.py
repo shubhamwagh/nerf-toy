@@ -11,7 +11,7 @@ with open("README.md") as f:
 
 setup(
     name='nerf_toy',
-    version='1.0.0',
+    version='0.0.1',
     description='A 2D toy illustration of Neural Radiance Fields',
     url='https://github.com/shubhamwagh/nerf-toy',
     long_description=README,
