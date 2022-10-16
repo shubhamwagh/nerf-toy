@@ -1,3 +1,5 @@
+[![Open Demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shubhamwagh/nerf-toy/blob/main/notebook/demo.ipynb)<br>
+
 <h1 align="center">
   <br>
   nerf-toy
