@@ -11,7 +11,7 @@ with open("README.md") as f:
 
 setup(
     name='nerf_toy',
-    version='0.0.2',
+    version='0.0.3',
     description='A 2D toy illustration of Neural Radiance Fields',
     url='https://github.com/shubhamwagh/nerf-toy',
     long_description=README,
@@ -35,8 +35,7 @@ setup(
         "Intended Audience :: Developers",
     ],
     keywords='nerf, neural radiance fields, nerf2D, nerf toy, fourier, positional encoding',
-    package_dir={"": "nerf_toy"},
-    packages=find_packages(where="nerf_toy"),
+    packages=find_packages(include=['nerf_toy', 'nerf_toy.*']),
     python_requires='>=3.6, <4',
     data_files=[],
     install_requires=['opencv-python', 'tensorflow', 'imageio', 'imageio-ffmpeg'],
