@@ -64,6 +64,15 @@ The model is trained with the following input mappings $\gamma (\mathbf{v})$ for
 ## Examples
 The [demo notebook](https://colab.research.google.com/github/shubhamwagh/nerf-toy/blob/main/notebook/demo.ipynb) demonstrates the core idea  with full model training from scratch.
 
+<div align="center">
+
+|                                               Original                                               |                                                No Mapping                                                 | Basic Mapping                                                                                              |                                         Fourier Feature Mapping                                          |
+|:----------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------:|
+| <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/nature.jpg" width="175">  | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/nature_none.gif" width="175">  | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/nature_basic.gif" width="175">  | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/nature_rff.gif" width="175">  |
+| <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/data/kitchen.jpg" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/kitchen_none.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/kitchen_basic.gif" width="175"> | <img src="https://raw.githubusercontent.com/shubhamwagh/nerf-toy/main/misc/kitchen_rff.gif" width="175"> |
+
+</div>
+
 It can be observed that directly regressing the _(x, y)_ image coordinates results in blurry reconstructions.
 
 Instead, lifting the input pixel coordinates _(x, y)_ to higher dimensions via transformations (e.g. gaussian fourier feature) 
