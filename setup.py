@@ -35,7 +35,7 @@ setup(
         "Intended Audience :: Developers",
     ],
     keywords='nerf, neural radiance fields, nerf2D, nerf toy, fourier, positional encoding',
-    packages=find_packages(['nerf_toy', 'nerf_toy.*']),
+    packages=find_packages(['nerf-toy', 'nerf-toy.*']),
     python_requires='>=3.6, <4',
     data_files=[],
     install_requires=['opencv-python', 'tensorflow', 'imageio', 'imageio-ffmpeg'],
