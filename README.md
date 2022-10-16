@@ -1,7 +1,7 @@
 [![Open Demo in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shubhamwagh/nerf-toy/blob/main/notebook/demo.ipynb)<br>
 
-[![Unit tests](https://github.com/shubhamwagh/nerf-toy/actions/workflows/ci.yml/badge.svg)](https://github.com/shubhamwagh/picograd/actions/workflows/ci.yml)
-[![Build](https://github.com/shubhamwagh/nerf-toy/actions/workflows/python-publish.yml/badge.svg)](https://github.com/shubhamwagh/picograd/actions/workflows/python-publish.yml)
+[![Unit tests](https://github.com/shubhamwagh/nerf-toy/actions/workflows/ci.yml/badge.svg)](https://github.com/shubhamwagh/nerf-toy/actions/workflows/ci.yml)
+[![Build](https://github.com/shubhamwagh/nerf-toy/actions/workflows/python-publish.yml/badge.svg)](https://github.com/shubhamwagh/nerf-toy/actions/workflows/python-publish.yml)
 [![Python Versions](https://img.shields.io/pypi/pyversions/nerf-toy.svg)](https://pypi.org/project/nerf-toy)
 [![PyPI Version](https://img.shields.io/pypi/v/nerf-toy.svg)](https://pypi.org/project/nerf-toy)
 [![PyPI status](https://img.shields.io/pypi/status/nerf-toy.svg)](https://pypi.python.org/project/nerf-toy)
